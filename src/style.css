@@ -2,3 +2,41 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: 1.5;
 }
+
+/* Header Possum */
+.elv-possum-anchor {
+	display: block;
+}
+.elv-possum {
+	position: absolute;
+	right: .5rem;
+	top: 2rem;
+	transition: .3s opacity ease-out;
+}
+
+header {
+	overflow: hidden;
+}
+header .elv-possum {
+	pointer-events: none;
+	width: auto;
+	height: calc((60vh - 2rem) / 1.6);
+	top: 36%;
+	left: 1vw;
+	right: auto;
+	animation-duration: 180s;
+	animation-name: balloonFloat;
+}
+@media (prefers-reduced-motion: reduce) {
+	header .elv-possum {
+		animation-duration: 0s;
+	}
+}
+@keyframes balloonFloat {
+	from {
+		transform: translate(-7vw, 30%);
+	}
+	to {
+		transform: translate(100vw, -52%);
+	}
+}

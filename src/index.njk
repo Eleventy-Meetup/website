@@ -4,22 +4,32 @@ title: Eleventy Meetup
 description: Join us to learn more about Eleventy!
 ---
 
-<h1>Eleventy Meetup</h1>
-<p>Join us to learn more about Eleventy!</p>
+<header>
+  <h1>Eleventy Meetup</h1>
+  <p>Join us to learn more about <a href="https://www.11ty.dev">Eleventy</a>!</p>
+  <a href="https://www.11ty.dev/news/logo-homage/" class="elv-possum-anchor" data-investors-avatar="">
+    <picture class="elv-possum-pic">
+      <!-- <source srcset="/img/possum-balloon-original.webp" type="image/webp"> -->
+      <img src="/img/possum-balloon-original-sm.png" class="elv-possum" alt="The possum is Eleventy’s mascot" loading="lazy" width="200" height="363">
+    </picture>
+  </a>
+</header>
 
-<p>Sign up to get new event announcements:</p>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/EleventyMeetup"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/EleventyMeetup', 'popupwindow')"
-  class="embeddable-buttondown-form"
->
-  <label for="bd-email">Enter your email</label>
-  <input type="email" name="email" id="bd-email" />
-  <input type="hidden" value="1" name="embed" />
-  <input type="submit" value="Subscribe" />
-  <p>
-    <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
-  </p>
-</form>
+<main>
+  <p>Sign up to get new event announcements:</p>
+  <form
+    action="https://buttondown.email/api/emails/embed-subscribe/EleventyMeetup"
+    method="post"
+    target="popupwindow"
+    onsubmit="window.open('https://buttondown.email/EleventyMeetup', 'popupwindow')"
+    class="embeddable-buttondown-form"
+  >
+    <label for="bd-email">Enter your email</label>
+    <input type="email" name="email" id="bd-email" />
+    <input type="hidden" value="1" name="embed" />
+    <input type="submit" value="Subscribe" />
+    <p>
+      <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
+    </p>
+  </form>
+</main>
