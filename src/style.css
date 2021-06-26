@@ -105,16 +105,38 @@ section {
 .flow > * + * { margin-top: var(--flow-space, 1em);}
 
 .person-card {
-  box-shadow: 0 15px 45px rgb(16 30 54 / 15%);
-  padding: 1em;
-  text-align: center;
-  width: 300px;
+  display: grid;
+  align-items: center;
+  gap: 1.5em;
+  grid-template-columns: auto 1fr;
+  margin: 1.5em;
 }
 .person-card img {
+  border: 5px solid var(--yellow-default);
   border-radius: 50%;
+  height: auto;
+  width: 100px;
+  filter: grayscale(70%) brightness(110%);
 }
 .person-card h3 {
+  display: flex;
   font-size: var(--size-500);
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.person-card h3::after {
+  content: '';
+  background: var(--gradient);
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+}
+.person-card svg {
+  margin-left: 0.5rem;
 }
 
 a { color: var(--red-40); }

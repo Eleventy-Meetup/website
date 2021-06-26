@@ -17,7 +17,7 @@ function generateOrganizer (person) {
 }
 
 async function getOrganizers () {
-  const filter = groq`*[_type == "person" && organizer] `
+  const filter = groq`*[_type == "person" && organizer] | order(name asc)`
   const docs = await client.fetch(filter).catch(err => console.error(err))
   const organizers = docs.map(generateOrganizer)
   const reducedOrganizers = overlayDrafts(hasToken, organizers)
