@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
+    "start": "netlify dev",
     "build": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "@sanity/block-content-to-markdown": "^0.0.5",
+    "@sanity/client": "^2.11.0",
+    "groq": "^2.2.6",
+    "luxon": "^1.27.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^8.0.3"
   }
 }

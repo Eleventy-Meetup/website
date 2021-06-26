@@ -1,34 +1,146 @@
+:root{
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+  --red-0: rgb(254,252,251);
+  --red-10: rgb(245,209,207);
+  --red-20: rgb(238,165,161);
+  --red-30: rgb(233,117,111);
+  --red-40: rgb(206,61,59);
+  --red-default: rgb(206,61,59);
+  --red-50: rgb(161,53,45);
+  --red-60: rgb(110,38,29);
+  --red-70: rgb(66,22,14);
+
+  --grey-0: rgb(252,252,252);
+  --grey-10: rgb(220,217,217);
+  --grey-20: rgb(158, 101, 101);
+  --grey-30: rgb(162,149,148);
+  --grey-40: rgb(142,123,123);
+  --grey-default: rgb(142,123,123);
+  --grey-50: rgb(100,87,87);
+  --grey-60: rgb(69,60,60);
+  --grey-70: rgb(40,35,34);
+
+  --white: var(--grey-0);
+
+  --size-300: 0.8rem;
+  --size-400: 1rem;
+  --size-500: 1.25rem;
+  --size-600: 1.563rem;
+  --size-700: 1.953rem;
+  --size-800: 2.441rem;
+  --size-900: 3.052rem;
+}
+/* Reset */
+*,*::before,*::after{box-sizing:border-box}body{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+html {font-size: 100%;} /*16px*/
+p {margin-bottom: 1rem;}
+h1, h2, h3, h4, h5 {
+  /* margin: 3rem 0 1.38rem; */
+  font-weight: 500;
+  line-height: 1.3;
+}
+h1 {
+  margin-top: 0;
+  font-size: var(--size-900);
+}
+h2 {font-size: var(--size-800);}
+h3 {font-size: var(--size-700);}
+h4 {font-size: var(--size-600);}
+h5 {font-size: var(--size-500);}
+small, .text_small {font-size: var(--size-300);}
+
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: var(--white);
+  font-family: var(--font-primary);
   line-height: 1.5;
+}
+
+.dark-bg {
+  background-color: var(--grey-70);
+  color: var(--white);
+  padding: 2em 1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 632px;
+  padding: 16px;
+}
+
+section {
+  padding: 2em 1em;
+}
+
+.flow > * + * { margin-top: var(--flow-space, 1em);}
+
+.person-card {
+  box-shadow: 0 15px 45px rgb(16 30 54 / 15%);
+  padding: 1em;
+  text-align: center;
+  width: 300px;
+}
+.person-card img {
+  border-radius: 50%;
+}
+.person-card h3 {
+  font-size: var(--size-500);
+}
+
+a { color: var(--red-40); }
+.dark-bg a { color: var(--red-30); }
+
+a:hover { color: var(--red-30); }
+.dark-bg a:hover { color: var(--red-20); }
+
+button {
+  background-color: var(--red-default);
+  border: none;
+  color: var(--white);
+  padding: 8px 16px;
+}
+
+input, label {
+  display: block;
+}
+label {
+  font-weight: 700;
+}
+input {
+  border: 1px solid var(--grey-20);
+  color: var(--grey-80);
+  display: block;
+  font-family: var(--font-primary);
+  font-size: var(--size-400);
+  /* margin: 4px 0; */
+  padding: 4px;
+  width: 100%;
 }
 
 /* Header Possum */
 .elv-possum-anchor {
 	display: block;
 }
+main {
+	overflow: hidden;
+  position: relative;
+}
 .elv-possum {
 	position: absolute;
-	right: .5rem;
-	top: 2rem;
-	transition: .3s opacity ease-out;
-}
-
-header {
-	overflow: hidden;
-}
-header .elv-possum {
-	pointer-events: none;
-	width: auto;
-	height: calc((60vh - 2rem) / 1.6);
-	top: 36%;
+	/* pointer-events: none; */
+	width: 70px;
+	height: auto;
+	top: 250px;
 	left: 1vw;
 	right: auto;
 	animation-duration: 180s;
 	animation-name: balloonFloat;
+	transition: .3s opacity ease-out;
 }
 @media (prefers-reduced-motion: reduce) {
-	header .elv-possum {
+	.elv-possum {
 		animation-duration: 0s;
 	}
 }
@@ -39,4 +151,8 @@ header .elv-possum {
 	to {
 		transform: translate(100vw, -52%);
 	}
+}
+
+@media screen and (min-width: 450px) {
+  html {font-size: 112.5%;} /*18px*/
 }

@@ -93,5 +93,5 @@ This Code of Conduct is adapted from the Community Covenant (http://community-co
 
 ## License
 
-Community Covenant by Coraline Ada Ehmke is licensed under a Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/). Based on a work at http://community-covenant.net/.
+Community Covenant by Coraline Ada Ehmke is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). Based on a work at [Community Covenant](http://community-covenant.net/).
 

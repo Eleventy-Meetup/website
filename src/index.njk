@@ -1,35 +1,50 @@
 ---
-layout: layout.njk
+layout: base.njk
 title: Eleventy Meetup
 description: Join us to learn more about Eleventy!
 ---
 
-<header>
-  <h1>Eleventy Meetup</h1>
-  <p>Join us to learn more about <a href="https://www.11ty.dev">Eleventy</a>!</p>
+<header class="dark-bg">
+  <div class="container">
+    <h1>Eleventy Meetup</h1>
+    <p>Join us to learn more about <a href="https://www.11ty.dev">Eleventy</a>!</p>
+  </div>
+</header>
+
+<main>
   <a href="https://www.11ty.dev/news/logo-homage/" class="elv-possum-anchor" data-investors-avatar="">
     <picture class="elv-possum-pic">
       <!-- <source srcset="/img/possum-balloon-original.webp" type="image/webp"> -->
       <img src="/img/possum-balloon-original-sm.png" class="elv-possum" alt="The possum is Eleventy’s mascot" loading="lazy" width="200" height="363">
     </picture>
   </a>
-</header>
-
-<main>
-  <p>Sign up to get new event announcements:</p>
-  <form
-    action="https://buttondown.email/api/emails/embed-subscribe/EleventyMeetup"
-    method="post"
-    target="popupwindow"
-    onsubmit="window.open('https://buttondown.email/EleventyMeetup', 'popupwindow')"
-    class="embeddable-buttondown-form"
-  >
-    <label for="bd-email">Enter your email</label>
-    <input type="email" name="email" id="bd-email" />
-    <input type="hidden" value="1" name="embed" />
-    <input type="submit" value="Subscribe" />
-    <p>
-      <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
-    </p>
-  </form>
+  <section class="container">
+    <p>Sign up to get new event announcements:</p>
+    <form
+      action="https://buttondown.email/api/emails/embed-subscribe/EleventyMeetup"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.email/EleventyMeetup', 'popupwindow')"
+      class="embeddable-buttondown-form flow"
+    >
+      <label for="bd-email">Enter your email</label>
+      <input type="email" name="email" id="bd-email" required />
+      <input type="hidden" value="1" name="embed" />
+      <button type="submit">Subscribe</button>
+      <p>
+        <small><a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a></small>
+      </p>
+    </form>
+  </section>
+  <section class="container">
+    <h2>About the organizers</h2>
+    {% for person in organizers %}
+      <article class="person-card">
+        <img src="{{person.headshotSrc}}" width="150" height="150" alt="">
+        <h3>{{person.name}}</h3>
+        <p>{{person.bio}}</p>
+        <p><a href="{{person.website}}">website</a> <a href="{{person.twitter}}">twitter</a></p>
+      </article>
+    {% endfor %}
+  </section>
 </main>
