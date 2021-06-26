@@ -76,7 +76,6 @@ h4 {font-size: var(--size-600);}
 h5 {font-size: var(--size-500);}
 small, .text_small {font-size: var(--size-300);}
 
-
 body {
   background-color: var(--white);
   font-family: var(--font-primary);
@@ -218,8 +217,11 @@ header::after {
 }
 
 /* Footer */
-footer {
-  position: relative;
+footer {position: relative;}
+footer section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 footer::before {
   content: '';
@@ -233,6 +235,7 @@ footer::before {
 footer ul {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 footer li {
   align-items: center;
