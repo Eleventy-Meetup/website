@@ -1,10 +1,10 @@
 ---
-layout: layout.njk
-title: Eleventy Meetup Code of Conduct
-description: Join us to learn more about Eleventy!
+layout: with-header.njk
+title: Code of Conduct
+description: And community covenant for all participants
 ---
 
-# Community Covenant and Code of Conduct
+<section class="container">
 
 ## Our Goal
 
@@ -95,3 +95,4 @@ This Code of Conduct is adapted from the Community Covenant (http://community-co
 
 Community Covenant by Coraline Ada Ehmke is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/). Based on a work at [Community Covenant](http://community-covenant.net/).
 
+</section>

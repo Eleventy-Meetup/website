@@ -1,5 +1,7 @@
 :root{
   --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-accent-h: 'Londrina Shadow', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-accent: 'Londrina Solid', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   --red-0: rgb(254,252,251);
   --red-10: rgb(245,209,207);
@@ -21,6 +23,27 @@
   --grey-60: rgb(69,60,60);
   --grey-70: rgb(40,35,34);
 
+  --teal-0: rgb(242,255,253);
+  --teal-10: rgb(5,243,224);
+  --teal-20: rgb(4,217,196);
+  --teal-default: rgb(4,217,196);
+  --teal-30: rgb(2,170,154);
+  --teal-40: rgb(1,135,123);
+  --teal-50: rgb(1,102,93);
+  --teal-60: rgb(0,71,65);
+  --teal-70: rgb(0,41,38);
+
+  --pink-default: #F25774;
+  --yellow-default: #F5EC6D;
+
+  --gradient: linear-gradient(
+    4deg,
+    var(--yellow-default) 0%,
+    var(--teal-default) 40%,
+    var(--pink-default) 74%,
+    var(--red-default) 100%
+  );
+
   --white: var(--grey-0);
 
   --size-300: 0.8rem;
@@ -38,8 +61,10 @@ html {font-size: 100%;} /*16px*/
 p {margin-bottom: 1rem;}
 h1, h2, h3, h4, h5 {
   /* margin: 3rem 0 1.38rem; */
+  color: var(--teal-40);
   font-weight: 500;
   line-height: 1.3;
+  font-family: var(--font-accent);
 }
 h1 {
   margin-top: 0;
@@ -62,6 +87,9 @@ body {
   background-color: var(--grey-70);
   color: var(--white);
   padding: 2em 1em;
+}
+.dark-bg h1 {
+ color: var(--white);
 }
 
 .container {
@@ -99,6 +127,7 @@ button {
   background-color: var(--red-default);
   border: none;
   color: var(--white);
+  font-family: var(--font-accent);
   padding: 8px 16px;
 }
 
@@ -119,12 +148,89 @@ input {
   width: 100%;
 }
 
+/* Nav */
+nav {
+  background-color: var(--grey-70);
+  position: relative;
+}
+nav::after {
+  content: '';
+  background: var(--gradient);
+  height: 8px;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+}
+nav ul {
+  margin: 0 16px;
+  text-align: right;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin: 16px 0;
+  text-align: center;}
+nav li a {
+  color: var(--red-20);
+  font-family: var(--font-accent);
+  /* letter-spacing: 1px; */
+  padding: 16px;
+  text-decoration: none;
+}
+nav li a:hover {
+  color: var(--red-10);
+}
+nav li a.active {
+  font-weight: 700;
+}
+header {position: relative;}
+header::after {
+  content: '';
+  background: var(--gradient);
+  height: 4px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  position: relative;
+}
+footer::before {
+  content: '';
+  background: var(--gradient);
+  height: 8px;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+}
+footer ul {
+  list-style: none;
+  margin: 0;
+}
+footer li {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 30px 1fr;
+  margin: 12px 0;
+}
+footer svg {
+  color: var(--teal-default);
+}
+
+
 /* Header Possum */
 .elv-possum-anchor {
 	display: block;
 }
 main {
 	overflow: hidden;
+  padding-bottom: 32px;
   position: relative;
 }
 .elv-possum {

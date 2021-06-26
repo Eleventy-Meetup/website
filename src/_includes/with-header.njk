@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<header>
+  {% include 'nav.njk' %}
+
+  <section class="dark-bg">
+    <div class="container">
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+    </div>
+  </section>
+</header>
+
+<main>
+  {{ content | safe }}
+</main>

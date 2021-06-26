@@ -2,6 +2,10 @@
 layout: base.njk
 ---
 
+<header>
+  {% include 'nav.njk' %}
+</header>
+
 <main class="container">
   {{ content | safe }}
 </main>
