@@ -1,6 +1,14 @@
+const filters = require('./src/_11ty/filters');
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/style.css");
   eleventyConfig.addPassthroughCopy("src/img/");
+
+
+  // Filters
+  Object.keys(filters).forEach(filterName => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
+  })
 
   return {
     // When a passthrough file is modified, rebuild the pages:
