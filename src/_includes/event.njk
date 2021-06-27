@@ -1,0 +1,9 @@
+{% set data = event.data.event %}
+{% set dateTime = data.startAt.utc %}
+
+<article class="event">
+  <time datetime="{{dateTime}}">{{dateTime | readableDateTime}}</time>
+  <h2>{{data.title}}</h2>
+  <p>{{data.overview}}</p>
+  <p><a href="{{event.url}}">Event details</a></p>
+</article>

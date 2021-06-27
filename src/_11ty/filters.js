@@ -1,11 +1,33 @@
-const { DateTime } = require("luxon");
+function readableDate(dateObj) {
+  return new Date(dateObj).toDateString()
+}
+
+function upcomingEvents(events) {
+  return events.filter(event => {
+    return new Date(event.data.event.startAt.utc) > new Date()
+  }).reverse()
+}
 
 module.exports = {
-  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  htmlDateString: (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  readableDate,
+  readableDateTime: dateObj => {
+    // "Jun 25, 2021, 12:00:00 PM CDT"  <--wanted time zone
+    return new Date(dateObj).toLocaleString([],{
+      day: '2-digit',
+      month: "short",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      timeZoneName: "short",
+    })
   },
-  readableDate: dateObj => {
-    return new Date(dateObj).toDateString()
+  nextEvent: events => {
+    return upcomingEvents(events)[0]
   },
+  pastEvents: events => {
+    return events.filter(event => {
+      return new Date(event.data.event.startAt.utc) < new Date()
+    })
+  },
+  upcomingEvents,
 }

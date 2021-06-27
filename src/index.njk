@@ -1,5 +1,5 @@
 ---
-layout: with-header.njk
+layout: layouts/with-header.njk
 title: THE Eleventy Meetup
 description: Join the Possum Posse to learn more about Eleventy!
 ---
@@ -12,6 +12,10 @@ description: Join the Possum Posse to learn more about Eleventy!
 </a>
 <section class="container flow">
   <h2>Our next meeting</h2>
+
+  {% set event = collections.ourEvents | nextEvent %}
+  {% include 'event.njk' %}
+
   <p>Stay tuned for details!</p>
   <p>Don't miss an event! Add our calendar and sign up for the newsletter.</p>
   <p><a class="button" href="https://calendar.google.com/calendar/u/0?cid=ZDN1aDgzbzJhMXBsYmt2NGJqMWxoMWQ0YjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">
