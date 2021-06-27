@@ -26,13 +26,13 @@ permalink: /events/
 
 <button id="convert-time">Convert to local times</button>
 
-{% for event in collections.ourEvents | upcomingEvents %}
+{% for event in collections.eventPages | upcomingEvents %}
   {% include 'event.njk' %}
 {% endfor %}
 
 <h2>Past Events</h2>
 
-{% for event in collections.ourEvents | pastEvents %}
+{% for event in collections.eventPages | pastEvents %}
   {% include 'event.njk' %}
 {% endfor %}
 

@@ -1,0 +1,27 @@
+---
+layout: layouts/layout.njk
+tags:
+  - eventPages
+pagination:
+  alias: event
+  data: events
+  size: 1
+  addAllPagesToCollections: true
+renderData:
+  title: {{event.title}}
+permalink: events/{{ event.slug.current | slug }}/index.html
+---
+
+<h1>{{event.title}}</h1>
+
+{{event.overview}}
+
+{% if event.talks %}
+
+  <h2>Talks</h2>
+
+  {% for talk in event.talks %}
+    {% include 'talk.njk' %}
+  {% endfor %}
+
+{% endif %}
