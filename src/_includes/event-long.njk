@@ -10,8 +10,6 @@
 
 {% if event.talks %}
 
-  <h2>Talks</h2>
-
   {% for talk in event.talks %}
     {% include 'talk.njk' %}
   {% endfor %}

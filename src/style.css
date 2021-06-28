@@ -65,7 +65,7 @@
 *::after {
   box-sizing: border-box;
 }
-body {
+body,h1,h2,h3,h4,p,figure,blockquote,dl,dd {
   margin: 0;
 }
 ul[role="list"],
@@ -134,6 +134,9 @@ h1 {
   margin-top: 0;
   font-size: clamp(var(--size-900), 5vw, 4rem);
 }
+h1.title {
+  margin-top: var(--size-800);
+}
 h2 {
   font-size: var(--size-900);
 }
@@ -175,7 +178,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 632px;
-  padding: 16px;
+  padding: var(--size-900) 16px;
 }
 
 section {
@@ -328,9 +331,6 @@ article.event h2 {
 .talk-card {
   margin: 5rem 0 0 max(5vw, 2rem);
   position: relative;
-}
-h2 + .talk-card {
-  margin-top: 0;
 }
 .talk-card .headshot {
   border-color: var(--red-default);

@@ -4,7 +4,7 @@ title: Code of Conduct
 description: And community covenant for all participants
 ---
 
-<section class="container">
+<section class="container flow">
 
 ## Our Goal
 
