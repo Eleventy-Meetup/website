@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+---
+<header>
+  {% include 'nav.njk' %}
+
+  <section class="dark-bg">
+    <div class="container">
+      <h1>{{title}}</h1>
+      {% if descriptionIsHtml == true %}
+        <div class="lead">{{description | safe}}</div>
+      {% else %}
+        <p class="lead">{{description | safe}}</p>
+      {% endif %}
+    </div>
+  </section>
+</header>
+
+<main>
+  {{ content | safe }}
+</main>

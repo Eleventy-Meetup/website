@@ -1,0 +1,19 @@
+---
+layout: layouts/with-header.njk
+tags:
+  - eventPages
+pagination:
+  alias: event
+  data: sanityEvents
+  size: 1
+  addAllPagesToCollections: true
+eleventyComputed:
+  title: "{{event.title}}"
+  description: "{{event.overview | safe}}"
+  descriptionIsHtml: true
+permalink: "events/{{ event.slug.current | slug }}/index.html"
+---
+
+<section class="container">
+  {% include 'event-long.njk' %}
+</section>

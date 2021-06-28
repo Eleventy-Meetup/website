@@ -1,5 +1,5 @@
 ---
-layout: with-header.njk
+layout: layouts/with-header.njk
 title: Code of Conduct
 description: And community covenant for all participants
 ---
