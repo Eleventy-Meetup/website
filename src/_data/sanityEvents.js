@@ -1,5 +1,5 @@
 const groq = require('groq')
-const BlocksToMarkdown = require('@sanity/block-content-to-markdown')
+const blocksToHtml = require('@sanity/block-content-to-html')
 const client = require('../utils/sanityClient.js')
 const serializers = require('../utils/serializers')
 const overlayDrafts = require('../utils/overlayDrafts')
@@ -8,14 +8,10 @@ const urlFor = require('../utils/imageUrl.js')
 // TODO: delete?
 const hasToken = !!client.config().token
 
-function toMarkdown(block) {
-  return BlocksToMarkdown(block, { serializers, ...client.config() })
-}
-
 function generateSpeaker(speaker) {
   return {
     ...speaker,
-    bio: toMarkdown(speaker.bio),
+    bio: blocksToHtml({blocks: speaker.bio, serializers}),
     headshotSrc: urlFor(speaker.image).width(300).height(300).url(),
   }
 }
@@ -23,7 +19,7 @@ function generateSpeaker(speaker) {
 function generateTalk(talk) {
   return {
     ...talk,
-    description: toMarkdown(talk.description),
+    description: blocksToHtml({blocks: talk.description, serializers}),
     speaker: talk.speaker ? generateSpeaker(talk.speaker) : null,
   }
 }
@@ -31,14 +27,14 @@ function generateTalk(talk) {
 function generateEvent (event) {
   return {
     ...event,
-    overview: toMarkdown(event.overview),
+    overview: blocksToHtml({blocks: event.overview, serializers}),
     talks: event.eventTalks ? event.eventTalks.map(talk => generateTalk(talk)) : null,
   }
 }
 
 async function getEvents () {
   const filter = groq`
-    *[_type == "event"]{
+    *[_type == "event" && published]{
       title,
       overview,
       startAt,

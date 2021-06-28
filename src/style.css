@@ -114,7 +114,7 @@ body {
 p {
   margin-bottom: 1rem;
 }
-p.lead {
+.lead {
   color: var(--grey-50);
   font-size: var(--size-500);
 }
@@ -192,6 +192,9 @@ section {
   grid-template-columns: auto 1fr;
   margin: 1.5em; /* fallback */
   margin: 1.5rem min(1.5rem, 3vw);
+}
+.person-no-photo-card {
+  margin-top: 2rem;
 }
 img.headshot {
   border: 5px solid var(--yellow-default);

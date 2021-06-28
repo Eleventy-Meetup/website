@@ -7,7 +7,11 @@ layout: layouts/base.njk
   <section class="dark-bg">
     <div class="container">
       <h1>{{title}}</h1>
-      <p class="lead">{{description | safe}}</p>
+      {% if descriptionIsHtml == true %}
+        <div class="lead">{{description | safe}}</div>
+      {% else %}
+        <p class="lead">{{description | safe}}</p>
+      {% endif %}
     </div>
   </section>
 </header>

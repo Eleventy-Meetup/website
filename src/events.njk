@@ -30,14 +30,16 @@ permalink: /events/
 </button>
 
 {% for event in collections.eventPages | upcomingEvents %}
-  {% include 'event.njk' %}
+  {% include 'event-short.njk' %}
 {% endfor %}
 
-<h2>Past Events</h2>
-
-{% for event in collections.eventPages | pastEvents %}
-  {% include 'event.njk' %}
-{% endfor %}
+{% set oldEvents = collections.eventPages | pastEvents %}
+{% if oldEvents and oldEvents.length > 0 %}
+  <h2>Past Events</h2>
+  {% for event in oldEvents %}
+    {% include 'event-short.njk' %}
+  {% endfor %}
+{% endif %}
 
 <script>
   function convertTime() {

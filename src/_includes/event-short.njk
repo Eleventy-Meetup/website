@@ -4,6 +4,6 @@
 <article class="event">
   <time datetime="{{dateTime}}">{{dateTime | readableDateTime}}</time>
   <h2>{{data.title}}</h2>
-  <p>{{data.overview}}</p>
+  {{data.overview | safe}}
   <p><a href="{{event.url}}">Event details</a></p>
 </article>

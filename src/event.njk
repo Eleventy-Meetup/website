@@ -4,12 +4,13 @@ tags:
   - eventPages
 pagination:
   alias: event
-  data: events
+  data: sanityEvents
   size: 1
   addAllPagesToCollections: true
 eleventyComputed:
   title: "{{event.title}}"
-  description: "{{event.overview}}"
+  description: "{{event.overview | safe}}"
+  descriptionIsHtml: true
 permalink: "events/{{ event.slug.current | slug }}/index.html"
 ---
 

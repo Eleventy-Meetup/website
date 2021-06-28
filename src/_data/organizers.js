@@ -1,5 +1,5 @@
 const groq = require('groq')
-const BlocksToMarkdown = require('@sanity/block-content-to-markdown')
+const blocksToHtml = require('@sanity/block-content-to-html')
 const client = require('../utils/sanityClient.js')
 const serializers = require('../utils/serializers')
 const overlayDrafts = require('../utils/overlayDrafts')
@@ -11,7 +11,7 @@ const hasToken = !!client.config().token
 function generateOrganizer (person) {
   return {
     ...person,
-    bio: BlocksToMarkdown(person.bio, { serializers, ...client.config() }),
+    bio: blocksToHtml({blocks: person.bio, serializers}),
     headshotSrc: urlFor(person.image).width(300).height(300).url(),
   }
 }

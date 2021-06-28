@@ -8,7 +8,7 @@
   </button>
 
   <h3>{{event.title}}</h3>
-  <p class="lead">{{event.overview}}</p>
+  <div class="lead">{{event.overview | safe}}</div>
 
   {% if event.talks %}
     {% for talk in event.talks %}

@@ -5,7 +5,7 @@
     <span>{{talk.title}}</span>
     <img class="headshot" src="{{person.headshotSrc}}" width="150" height="150" alt="">
   </h4>
-  <p>{{talk.description}}</p>
+  {{talk.description | safe}}
 
   {% include 'person-no-photo.njk' %}
 </article>
