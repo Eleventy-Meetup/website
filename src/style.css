@@ -17,9 +17,10 @@
   --grey-10: rgb(220,217,217);
   --grey-20: rgb(158, 101, 101);
   --grey-30: rgb(162,149,148);
-  --grey-40: rgb(142,123,123);
-  --grey-default: rgb(142,123,123);
-  --grey-50: rgb(100,87,87);
+  --grey-40: hsl(0, 8%, 52%);
+  --grey-default: hsl(0, 8%, 52%);
+  --grey-45: hsl(0, 7%, 43%);
+  --grey-50: hsl(0, 7%, 37%);
   --grey-60: rgb(69,60,60);
   --grey-70: rgb(40,35,34);
 
@@ -64,6 +65,10 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 p {margin-bottom: 1rem;}
+p.lead {
+  color: var(--grey-50);
+  font-size: var(--size-500);
+}
 h1, h2, h3, h4, h5 {
   /* margin: 3rem 0 1.38rem; */
   color: var(--teal-40);
@@ -115,20 +120,23 @@ section {
   grid-template-columns: auto 1fr;
   margin: 1.5em;
 }
-.person-card img {
+img.headshot {
   border: 5px solid var(--yellow-default);
   border-radius: 50%;
   height: auto;
   width: 100px;
-  filter: grayscale(70%) brightness(110%);
 }
-.person-card h3 {
+.person-card h3, .person-no-photo-card h3 {
   display: flex;
   font-size: var(--size-500);
   justify-content: space-between;
   position: relative;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+}
+.person-no-photo-card h3 {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .person-card h3::after {
   content: '';
@@ -170,10 +178,31 @@ button:hover, .button:hover {
   background-color: var(--red-30);
   color: var(--white);
 }
+.button-small {
+  font-size: var(--size-300);
+  padding: 4px 8px;
+}
+.button-grey {
+  background-color: var(--grey-45);
+}
+.button-grey:hover {
+  background-color: var(--grey-30);
+}
 .action-buttons {
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
+}
+.button-link {
+  background-color: var(--white);
+  color: var(--red-default);
+  font-family: var(--font-primary);
+  font-size: var(--size-300);
+  font-weight: 700;
+}
+.button-link:hover {
+  background-color: var(--white);
+  color: var(--red-30);
 }
 
 article.event {
@@ -182,13 +211,47 @@ article.event {
 }
 time {
   color: var(--grey-50);
-  font-family: var(--font-mono);
+  /* font-family: var(--font-mono); */
   font-size: var(--size-300);
   text-transform: uppercase;
 }
 article.event h2 {
   font-size: var(--size-600);
   margin: var(--size-200) 0;
+}
+
+.featured-event h3, .featured-event .lead {
+  margin: 0;
+}
+.talk-card {
+  margin: 5rem 0;
+  position: relative;
+}
+.talk-card .headshot {
+  border-color: var(--red-default);
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 75px;
+  z-index: 2;
+}
+.talk-card h4 {
+  padding-bottom: 0.5rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.talk-card h4 span {
+  display: inline-block;
+  max-width: calc(100% - 80px);
+}
+.talk-card h4::after {
+  content: '';
+  background: var(--gradient);
+  height: 5px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: calc(100% - 35px);
 }
 
 input, label {

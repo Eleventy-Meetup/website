@@ -1,5 +1,5 @@
 ---
-layout: layouts/layout.njk
+layout: layouts/with-header.njk
 tags:
   - eventPages
 pagination:
@@ -7,21 +7,12 @@ pagination:
   data: events
   size: 1
   addAllPagesToCollections: true
-renderData:
-  title: {{event.title}}
-permalink: events/{{ event.slug.current | slug }}/index.html
+eleventyComputed:
+  title: "{{event.title}}"
+  description: "{{event.overview}}"
+permalink: "events/{{ event.slug.current | slug }}/index.html"
 ---
 
-<h1>{{event.title}}</h1>
-
-{{event.overview}}
-
-{% if event.talks %}
-
-  <h2>Talks</h2>
-
-  {% for talk in event.talks %}
-    {% include 'talk.njk' %}
-  {% endfor %}
-
-{% endif %}
+<section class="container">
+  {% include 'event-long.njk' %}
+</section>

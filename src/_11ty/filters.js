@@ -22,7 +22,7 @@ module.exports = {
     })
   },
   nextEvent: events => {
-    return upcomingEvents(events)[0]
+    return upcomingEvents(events)[0].data.event
   },
   pastEvents: events => {
     return events.filter(event => {

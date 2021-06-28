@@ -1,6 +1,11 @@
-<h3>{{talk.title}}</h3>
-
-{{talk.description}}
-
 {% set person = talk.speaker %}
-{% include 'person.njk' %}
+
+<article class="talk-card">
+  <h4>
+    <span>{{talk.title}}</span>
+    <img class="headshot" src="{{person.headshotSrc}}" width="150" height="150" alt="">
+  </h4>
+  <p>{{talk.description}}</p>
+
+  {% include 'person-no-photo.njk' %}
+</article>
