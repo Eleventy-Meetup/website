@@ -427,6 +427,13 @@ header::after {
   width: 100%;
 }
 
+.sponsors {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
 /* Footer */
 footer {
   position: relative;
@@ -501,4 +508,7 @@ main {
   html {
     font-size: 112.5%;
   } /*18px*/
+  .sponsors {
+    grid-template-columns: 1fr 1fr;
+  }
 }
