@@ -1,0 +1,40 @@
+---
+permalink: feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>THE Eleventy Meetup</title>
+  <subtitle>Join the Possum Posse to learn more about Eleventy!</subtitle>
+  <link href="https://11tymeetup.dev/feed.xml" rel="self"/>
+  <link href="https://11tymeetup.dev"/>
+  <id>https://11tymeetup.dev/</id>
+  <author>
+    <name>THE Eleventy Meetup</name>
+  </author>
+  {% set mostRecentUpdatedCounter = 0 %}
+  {% set mostRecentUpdated = null %}
+  {% set entryElements = '' %}
+  {% for event in sanityEvents %}
+    {# determine the most recently updated event by comparing timestamps #}
+    {% if event.updated|date('x') > mostRecentUpdatedCounter %}
+      {% set mostRecentUpdatedCounter = event.updated|date('x') %}
+      {% set mostRecentUpdated = event.updated|date('YYYY-MM-DDTHH:mm:ssZ') %}
+    {% endif %}
+
+    {# build `entry` elements #}
+    {% set entryElements %}
+      {{ entryElements }}
+      <entry>
+        <title>{{ event.title }}</title>
+        <link href="https://11tymeetup.dev/events/{{ event.slug.current }}"/>
+        <updated>{{ event.updated | date('YYYY-MM-DDTHH:mm:ssZ') }}</updated>
+        <id>https://11tymeetup.dev/events/{{ event.slug.current }}/</id>
+        <content type="html">
+          {{ event.overview }}
+        </content>
+      </entry>
+    {% endset %}
+  {% endfor %}
+  <updated>{{ mostRecentUpdated }}</updated>
+  {{ entryElements | safe }}
+</feed>

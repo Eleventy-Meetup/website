@@ -1,3 +1,5 @@
+const date = require('nunjucks-date');
+
 function readableDate(dateObj) {
   return new Date(dateObj).toDateString()
 }
@@ -9,6 +11,7 @@ function upcomingEvents(events) {
 }
 
 module.exports = {
+  date,
   readableDate,
   readableDateTime: dateObj => {
     // "Jun 25, 2021, 12:00:00 PM CDT"  <--wanted time zone

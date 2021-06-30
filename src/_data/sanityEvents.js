@@ -29,6 +29,7 @@ function generateEvent (event) {
     ...event,
     overview: blocksToHtml({blocks: event.overview, serializers}),
     talks: event.eventTalks ? event.eventTalks.map(talk => generateTalk(talk)) : null,
+    updated: new Date(event._updatedAt),
   }
 }
 
@@ -38,6 +39,7 @@ async function getEvents () {
       title,
       overview,
       startAt,
+      _updatedAt,
       slug,
       'eventTalks': eventTalks[].talk->{
         title,
