@@ -1,33 +1,60 @@
 ---
 layout: layouts/with-header.njk
 title: THE Eleventy Meetup
-description: Join the Possum Posse to learn more about Eleventy!
+descriptionIsHtml: true
+description: "<p>Join the Possum Posse to learn more about Eleventy! We're a new virtual meetup all about Eleventy and the tools and skills that support developing on Eleventy.</p><a class='button' href='/#newsletter'>Sign up for email updates</a>"
 ---
 
-<a href="https://www.11ty.dev/news/logo-homage/" class="elv-possum-anchor" data-investors-avatar="">
+<a
+  href="https://www.11ty.dev/news/logo-homage/"
+  class="elv-possum-anchor"
+  data-investors-avatar=""
+>
   <picture class="elv-possum-pic">
     <!-- <source srcset="/img/possum-balloon-original.webp" type="image/webp"> -->
-    <img src="/img/possum-balloon-original-sm.png" class="elv-possum" alt="The possum is Eleventy’s mascot" loading="lazy" width="200" height="363">
+    <img
+      src="/img/possum-balloon-original-sm.png"
+      class="elv-possum"
+      alt="The possum is Eleventy’s mascot"
+      loading="lazy"
+      width="200"
+      height="363"
+    />
   </picture>
 </a>
 <section class="container flow">
   {% set event = collections.eventPages | nextEvent %}
   <h2>Our next meeting</h2>
-  {% if event %}
-    {% include 'featured-event.njk' %}
-  {% else %}
-    <p>Stay tuned for details!</p>
+  {% if event %} {% include 'featured-event.njk' %} {% else %}
+  <p>Stay tuned for details!</p>
   {% endif %}
 </section>
 <section class="container flow">
   <h2>Meetup Updates</h2>
-  <p class="lead">Don't miss an event! Add our calendar and sign up for the newsletter.</p>
-  <p><a class="button" href="https://calendar.google.com/calendar/u/0?cid=ZDN1aDgzbzJhMXBsYmt2NGJqMWxoMWQ0YjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">
-    <span class="vertical-center">
-      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16"><path fill="currentColor" d="M336 292v24c0 6.6-5.4 12-12 12h-76v76c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-76h-76c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h76v-76c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v76h76c6.6 0 12 5.4 12 12zm112-180v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>
-      Add our calendar
-    </span>
-  </a></p>
+  <p class="lead">
+    Don't miss an event! Add our calendar and sign up for the newsletter.
+  </p>
+  <p>
+    <a
+      class="button"
+      href="https://calendar.google.com/calendar/u/0?cid=ZDN1aDgzbzJhMXBsYmt2NGJqMWxoMWQ0YjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+    >
+      <span class="vertical-center">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          width="16"
+        >
+          <path
+            fill="currentColor"
+            d="M336 292v24c0 6.6-5.4 12-12 12h-76v76c0 6.6-5.4 12-12 12h-24c-6.6 0-12-5.4-12-12v-76h-76c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h76v-76c0-6.6 5.4-12 12-12h24c6.6 0 12 5.4 12 12v76h76c6.6 0 12 5.4 12 12zm112-180v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"
+          />
+        </svg>
+        Add our calendar
+      </span>
+    </a>
+  </p>
   <h3 id="newsletter">Newsletter</h3>
   <p>Sign up to get new event announcements:</p>
   <form
@@ -42,24 +69,32 @@ description: Join the Possum Posse to learn more about Eleventy!
     <input type="hidden" value="1" name="embed" />
     <button type="submit">Subscribe</button>
     <p>
-      <small><a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a></small>
+      <small
+        ><a href="https://buttondown.email" target="_blank"
+          >Powered by Buttondown.</a
+        ></small
+      >
     </p>
   </form>
 </section>
 <section class="container flow">
   <h2>Sponsors</h2>
-  <p>Thanks to our sponsors for helping make this meetup happen! Interested in sponsoring? <a href="mailto:eleventymeetup@gmail.com">Email us</a>.</p>
+  <p>
+    Thanks to our sponsors for helping make this meetup happen! Interested in
+    sponsoring? <a href="mailto:eleventymeetup@gmail.com">Email us</a>.
+  </p>
   <div class="sponsors">
     <article class="sponsor">
       <a href="https://www.sanity.io/">
-        <img src="https://cdn.sanity.io/images/3do82whm/next/51af00784c5addcf63ae7f0c416756acca7e63ac-353x71.svg" alt="Sanity">
+        <img
+          src="https://cdn.sanity.io/images/3do82whm/next/51af00784c5addcf63ae7f0c416756acca7e63ac-353x71.svg"
+          alt="Sanity"
+        />
       </a>
     </article>
   </div>
 </section>
 <section class="container flow">
   <h2>About the organizers</h2>
-  {% for person in organizers %}
-    {% include 'person.njk' %}
-  {% endfor %}
+  {% for person in organizers %} {% include 'person.njk' %} {% endfor %}
 </section>

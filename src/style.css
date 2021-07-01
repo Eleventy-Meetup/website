@@ -65,7 +65,16 @@
 *::after {
   box-sizing: border-box;
 }
-body,h1,h2,h3,h4,p,figure,blockquote,dl,dd {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 ul[role="list"],
@@ -236,14 +245,14 @@ img.headshot {
 a {
   color: var(--red-40);
 }
-.dark-bg a {
+.dark-bg a:not(.button) {
   color: var(--red-30);
 }
 
 a:hover {
   color: var(--red-30);
 }
-.dark-bg a:hover {
+.dark-bg a:not(.button):hover {
   color: var(--red-20);
 }
 
