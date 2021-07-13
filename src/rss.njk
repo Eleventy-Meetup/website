@@ -30,6 +30,8 @@ permalink: feed.xml
         <updated>{{ event.updated | date('YYYY-MM-DDTHH:mm:ssZ') }}</updated>
         <id>https://11tymeetup.dev/events/{{ event.slug.current }}/</id>
         <content type="html">
+          {% set dateTime = event.startAt.utc %}
+          <p>{{dateTime | readableDateTime}}</p>
           {{ event.overview }}
         </content>
       </entry>
