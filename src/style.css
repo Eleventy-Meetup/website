@@ -338,7 +338,7 @@ article.event h2 {
   margin: 0;
 }
 .talk-card {
-  margin: 5rem 0 0 max(5vw, 2rem);
+  margin: 5rem 0 max(5vw, 2rem);
   position: relative;
 }
 .talk-card .headshot {
