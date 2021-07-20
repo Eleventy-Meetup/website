@@ -25,7 +25,8 @@ module.exports = {
     })
   },
   nextEvent: events => {
-    return upcomingEvents(events)[0].data.event
+    const filteredEvents = upcomingEvents(events)
+    return filteredEvents.length > 0 ? filteredEvents[0].data.event : null
   },
   pastEvents: events => {
     return events.filter(event => {
