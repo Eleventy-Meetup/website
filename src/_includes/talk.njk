@@ -7,5 +7,11 @@
   </h4>
   {{talk.description | safe}}
 
+  {% if talk.youtube %}
+    {% set videoTitle = talk.title %}
+    {% set videoId = talk.youtube %}
+    {% include 'youtube.njk' %}
+  {% endif %}
+
   {% include 'person-no-photo.njk' %}
 </article>

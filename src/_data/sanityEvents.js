@@ -44,6 +44,7 @@ async function getEvents () {
       'eventTalks': eventTalks[].talk->{
         title,
         description,
+        youtube,
         'speaker': person->{
           name,
           bio,
