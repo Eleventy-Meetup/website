@@ -47,6 +47,7 @@ async function getEvents () {
         youtube,
         'speaker': person->{
           name,
+          pronouns,
           bio,
           image,
           website,
