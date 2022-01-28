@@ -23,7 +23,7 @@ permalink: feed.xml
 
     {# build `entry` elements #}
     {% set entryElements %}
-      {{ entryElements }}
+      {{ entryElements|safe }}
       <entry>
         <title>{{ event.title }}</title>
         <link href="https://11tymeetup.dev/events/{{ event.slug.current }}"/>
