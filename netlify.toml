@@ -6,3 +6,5 @@
 
 [build.environment]
   TZ = "America/Chicago"
+[dev]
+  command = "npm run start"

@@ -24,10 +24,27 @@ description: "<p>Join the Possum Posse to learn more about Eleventy! We're a new
 </a>
 <section class="container flow">
   {% set event = collections.eventPages | nextEvent %}
-  <h2>Our next meeting</h2>
+  <h2 id="next-event">Our next meeting</h2>
   {% if event %} {% include 'featured-event.njk' %} {% else %}
   <p>Stay tuned for details!</p>
   {% endif %}
+</section>
+<section class="bg-grey">
+  <div class="container flow">
+    <h2>How do I register?</h2>
+    <p class="lead"><strong>You don't!</strong></p>
+    <p>
+      We weren't interested in the corporate idea of collecting registration
+      information. Instead, we share the zoom link via the
+      <a href="#next-event">calendar event</a>, in an event on our
+      <a
+        href="https://calendar.google.com/calendar/u/0?cid=ZDN1aDgzbzJhMXBsYmt2NGJqMWxoMWQ0YjhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+        >public calendar</a
+      >, in an <a href="#newsletter">email</a> on the day of, and in the
+      <a href="https://www.11ty.dev/news/discord/">11ty discord</a> on the day
+      of.
+    </p>
+  </div>
 </section>
 <section class="container flow">
   <h2>Meetup Updates</h2>
@@ -77,21 +94,31 @@ description: "<p>Join the Possum Posse to learn more about Eleventy! We're a new
     </p>
   </form>
 </section>
-<section class="container flow">
-  <h2>Sponsors</h2>
-  <p>
-    Thanks to our sponsors for helping make this meetup happen! Interested in
-    sponsoring? Sponsor us on <a href="https://opencollective.com/the-eleventy-meetup">Open Collective</a>.
-  </p>
-  <div class="sponsors">
-    <article class="sponsor">
-      <a href="https://www.sanity.io/">
-        <img
-          src="https://cdn.sanity.io/images/3do82whm/next/51af00784c5addcf63ae7f0c416756acca7e63ac-353x71.svg"
-          alt="Sanity"
-        />
-      </a>
-    </article>
+<section class="bg-grey">
+  <div class="container flow">
+    <h2>Sponsors</h2>
+    <p>
+      Thanks to our sponsors for helping make this meetup happen! Interested in
+      sponsoring? Sponsor us on
+      <a href="https://opencollective.com/the-eleventy-meetup"
+        >Open Collective</a
+      >.
+    </p>
+    <div class="sponsors">
+      <article class="sponsor">
+        <a href="https://www.sanity.io/">
+          <img
+            src="https://cdn.sanity.io/images/3do82whm/next/51af00784c5addcf63ae7f0c416756acca7e63ac-353x71.svg"
+            alt="Sanity"
+          />
+        </a>
+      </article>
+      <article class="sponsor">
+        <a href="https://mediajams.dev/">
+          <img src="./img/mediajams_logo.png" alt="Media Jams" />
+        </a>
+      </article>
+    </div>
   </div>
 </section>
 <section class="container flow">
