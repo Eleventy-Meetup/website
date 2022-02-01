@@ -12,14 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
     "@sanity/block-content-to-html": "^2.0.0",
     "@sanity/client": "^2.11.0",
     "groq": "^2.2.6",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^8.0.3",
+    "markdown-it": "^12.3.2",
+    "markdown-it-anchor": "^8.4.1",
     "nunjucks-date": "^1.5.0"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^1.0.0"
   }
 }
