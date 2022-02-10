@@ -19,14 +19,20 @@
 
 <script>
   function convertTime() {
-    const timeNodes = document.querySelectorAll('time')
+    const timeNodes = document.querySelectorAll("time");
 
-    timeNodes.forEach(node => {
-      const date = new Date(node.dateTime)
-      const newLocaleString = date.toLocaleString([],{timeStyle:"long", dateStyle: "medium"})
-      node.innerHTML = newLocaleString;
-    })
+    timeNodes.forEach((node) => {
+      const date = new Date(node.dateTime);
+      const newLocaleString = date.toLocaleString([], {
+        timeStyle: "long",
+        dateStyle: "medium",
+      });
+      node.textContent = newLocaleString;
+    });
+
+    button.remove();
   }
 
-  document.querySelector('#convert-time').addEventListener('click', convertTime)
+  const button = document.querySelector("#convert-time");
+  button.addEventListener("click", convertTime);
 </script>
