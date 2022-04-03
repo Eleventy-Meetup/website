@@ -3,7 +3,9 @@
 <article class="talk-card">
   <h4>
     <span>{{talk.title}}</span>
+    {% if person.headshotSrc %}
     <img class="headshot" src="{{person.headshotSrc}}" width="150" height="150" alt="">
+    {% endif %}
   </h4>
   {{talk.description | safe}}
 
@@ -13,5 +15,7 @@
     {% include 'youtube.njk' %}
   {% endif %}
 
+  {% if person %}
   {% include 'person-no-photo.njk' %}
+  {% endif %}
 </article>
