@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Grab title from the page data and dump it here -->
   <title>{{ title or (renderData and renderData.title) }}</title>
-  <meta name="description" content="{{ description }}">
+  <meta name="description" content="{{ description | safe }}">
   <link rel="stylesheet" href="/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
