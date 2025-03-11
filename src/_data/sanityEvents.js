@@ -39,6 +39,7 @@ async function getEvents () {
       title,
       overview,
       startAt,
+      liveUrl,
       _updatedAt,
       slug,
       'eventTalks': eventTalks[].talk->{
