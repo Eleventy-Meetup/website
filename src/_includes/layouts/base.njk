@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Grab title from the page data and dump it here -->
   <title>{{ title or (renderData and renderData.title) }}</title>
-  <meta name="description" content="{{ description | safe }}">
+  <meta name="description" content="{{ description }}">
+  <meta property="og:image" content="https://11tymeetup.dev/img/share.jpg" />
   <link rel="stylesheet" href="/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
