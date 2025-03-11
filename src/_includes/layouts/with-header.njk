@@ -10,7 +10,11 @@ layout: layouts/base.njk
       {% if headingText %}
         <div class="lead">{{headingText | safe}}</div>
       {% else %}
-        <p class="lead">{{description | safe}}</p>
+        <div class="lead">{{description | safe}}</div>
+      {% endif %}
+      {% set upcomingEvent = collections.eventPages | nextEvent %}
+      {% if upcomingEvent == event %}
+        {% include "add-to-calendar.njk" %}
       {% endif %}
     </div>
   </section>

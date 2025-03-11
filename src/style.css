@@ -125,7 +125,8 @@ p {
   margin-bottom: 1rem;
   max-width: 65ch;
 }
-.lead {
+.lead,
+.add-to-calendar {
   color: var(--grey-50);
   font-size: var(--size-500);
 }
@@ -183,7 +184,8 @@ body {
 .dark-bg h1 {
   color: var(--white);
 }
-.dark-bg .lead {
+.dark-bg .lead,
+.dark-bg .add-to-calendar {
   color: var(--white);
 }
 .bg-grey {
@@ -620,4 +622,26 @@ lite-youtube.lyt-activated > .lty-playbtn {
   .sponsors {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.add-to-calendar__hed {
+  font-weight: bold;
+  margin-block-end: 0;
+}
+
+.add-to-calendar__links {
+  list-style-type: "";
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Hides add to calendar links inside lead */
+.lead p:has(a[href^="https://addcal.co/e/"]),
+.lead p:has(strong):has(+ p a[href^="https://addcal.co/e/"])
+{
+  display: none;
 }
