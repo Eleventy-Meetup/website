@@ -34,8 +34,9 @@ module.exports = {
     })
   },
   upcomingEvents,
-  excerpt: post => {
+  excerpt: (post, limit="300") => {
     const content = post.replace(/(<([^>]+)>)/gi, "");
-    return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+    content.length > limit ? content.substr(0, content.lastIndexOf(" ", limit)) + "..." : content;
+    return content;
   }
 }
