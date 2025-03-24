@@ -10,7 +10,7 @@ pagination:
 eleventyComputed:
   title: "{{ event.title | safe }}"
   description: "{{ event.overview | safe }}"
-  headingText: "{{ event.description | safe }}"
+  descriptionIsHtml: true
 permalink: "events/{{ event.slug.current | slug }}/index.html"
 ---
 
