@@ -51,7 +51,8 @@ async function getEvents () {
           bio,
           image,
           website,
-          twitter
+          mastodon,
+          bluesky
         }
       }
     }| order(startAt.local desc)`

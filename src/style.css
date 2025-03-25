@@ -208,8 +208,8 @@ section {
   display: grid;
   gap: 1.5em;
   grid-template-columns: auto 1fr;
-  margin: 1.5em; /* fallback */
-  margin: 1.5rem min(1.5rem, 3vw);
+  margin: 1.5em 0; /* fallback */
+  /* margin: 1.5rem min(1.5rem, 3vw); */
 }
 .person-no-photo-card {
   margin-top: 2rem;
@@ -223,17 +223,11 @@ img.headshot {
 }
 .person-card h3,
 .person-no-photo-card h3 {
-  display: flex;
   color: var(--grey-50);
   font-family: var(--font-primary);
-  font-size: var(--size-400);
-  justify-content: space-between;
-  align-items: center;
+  font-size: var(--size-500);
+  margin-bottom: var(--size-400);
   position: relative;
-  margin-bottom: 0.5em;
-}
-.person-no-photo-card h3 {
-  margin-top: 1.5em;
 }
 .person-card h3::after {
   content: "";
@@ -244,8 +238,10 @@ img.headshot {
   left: 0;
   width: 100%;
 }
-.person-card svg {
-  margin-left: 0.5rem;
+.social {
+  display: flex;
+  font-size: var(--size-300);
+  gap: var(--size-200);
 }
 
 a {
@@ -344,7 +340,7 @@ article.event h2 {
   margin: 0;
 }
 .talk-card {
-  margin: 5rem 0 0 max(5vw, 2rem);
+  margin: 5rem 0 0;
   position: relative;
 }
 .talk-card .headshot {
