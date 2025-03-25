@@ -494,7 +494,7 @@ footer svg {
 }
 main {
   overflow: hidden;
-  margin-bottom: 8vh;
+  /* margin-bottom: 8vh; */
   position: relative;
 }
 .elv-possum {

@@ -82,39 +82,7 @@ description: "<p>Join the Possum Posse to learn more about Eleventy! We're a new
 </section>
 <section class="bg-grey">
   <div class="container flow">
-    <h2>Sponsors</h2>
-    <p>
-      Thanks to our sponsors for helping make this meetup happen! Interested in
-      sponsoring? Sponsor us on
-      <a href="https://opencollective.com/the-eleventy-meetup"
-        >Open Collective</a
-      >.
-    </p>
-    <h3 class="color-primary">2023 Gold Sponsor</h3>
-    <div class="sponsors">
-      <article class="sponsor">
-        <a href="https://hubs.la/Q01VnH2g0">
-          <img
-            src="/img/cloudcannon.svg"
-            alt="CloudCannon"
-          />
-        </a>
-      </article>
-    </div>
-    <h3 class="color-primary">Additional Sponsors</h3>
-    <div class="sponsors">
-      <article class="sponsor">
-        <a href="https://www.sanity.io/">
-          <img
-            src="https://cdn.sanity.io/images/3do82whm/next/51af00784c5addcf63ae7f0c416756acca7e63ac-353x71.svg"
-            alt="Sanity"
-          />
-        </a>
-      </article>
-    </div>
+    <h2>About the organizer</h2>
+    {% for person in organizers %} {% include 'person.njk' %} {% endfor %}
   </div>
-</section>
-<section class="container flow">
-  <h2>About the organizers</h2>
-  {% for person in organizers %} {% include 'person.njk' %} {% endfor %}
 </section>
