@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Apple",
+    "service": "apple"
+  },
+  {
+    "name": "Google",
+    "service": "google"
+  },
+  {
+    "name": "Office 365",
+    "service": "office365"
+  },
+  { "name": "Outlook", "service": "outlook" },
+  {
+    "name": "Yahoo",
+    "service": "yahoo"
+  }
+]

@@ -1,0 +1,23 @@
+<div class="add-to-calendar">
+    <p class="add-to-calendar__hed" id="add-to-calendar-hed-{{ event.slug.current }}">
+        Add to Calendar
+    </p>
+
+    <ul class="add-to-calendar__links" aria-describedby="add-to-calendar-hed-{{ event.slug.current }}">
+        {% for service in calendarServices %}
+            <li>
+                <a
+                    href="https://addcal.co/api/calndr/d/event?service={{ service.service }}&amp;start={{ event.startAt.utc }}&amp;title={{ event.title | urlencode }}&amp;description={{ event.overview | urlencode }}&amp;location={{ event.liveUrl | urlencode }}"
+                    aria-label="Add &quot;{{ event.title }}&quot; to {{ service.name }}"
+                    target="_blank"
+                >
+                    {{ service.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <script type="application/json">
+        {{ event|dump|safe }}
+    </script>
+</div>

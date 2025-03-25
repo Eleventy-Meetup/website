@@ -10,6 +10,8 @@
   <h3>{{event.title}}</h3>
   <div class="lead">{{event.overview | safe}}</div>
 
+  {% include "add-to-calendar.njk" %}
+
   {% if event.talks %}
     {% for talk in event.talks %}
       {% include 'talk.njk' %}
