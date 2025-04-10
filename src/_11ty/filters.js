@@ -1,5 +1,7 @@
 const date = require('nunjucks-date');
 
+const encodeForUrl = string => encodeURIComponent(string)
+
 function readableDate(dateObj) {
   return new Date(dateObj).toDateString()
 }
@@ -11,7 +13,12 @@ function upcomingEvents(events) {
 }
 
 module.exports = {
+  calendarDescription: description => {
+    const text = `${description} See https://11tymeetup.dev/ for the full details!`
+    return encodeForUrl(text)
+  },
   date,
+  encodeForUrl,
   readableDate,
   readableDateTime: dateObj => {
     // "Jun 25, 2021, 12:00:00 PM CDT"  <--wanted time zone

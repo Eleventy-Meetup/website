@@ -31,6 +31,26 @@
 <body>
   {{ content | safe }}
 
+  <script>
+    function convertTime() {
+      const timeNodes = document.querySelectorAll("time");
+
+      timeNodes.forEach((node) => {
+        const date = new Date(node.dateTime);
+        const newLocaleString = date.toLocaleString([], {
+          day: '2-digit',
+          month: "short",
+          year: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          timeZoneName: "short",
+        });
+        node.textContent = newLocaleString;
+      });
+    }
+
+    convertTime()
+  </script>
   {% include 'footer.njk' %}
 </body>
 </html>
