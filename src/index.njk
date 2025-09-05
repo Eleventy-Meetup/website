@@ -23,10 +23,15 @@ description: "<p>Join the Possum Posse to learn more about Eleventy! We're a new
   </picture>
 </a>
 <section class="container flow">
-  {% set event = collections.eventPages | nextEvent %}
-  <h2 id="next-event">Our next meeting</h2>
-  {% if event %} {% include 'featured-event.njk' %} {% else %}
-  <p>Stay tuned for details!</p>
+  {% set events = collections.eventPages | upcomingEvents %}
+  {% set numEvents = events | length %}
+  <h2 id="next-event">Our upcoming meetings</h2>
+  {% if numEvents > 0 %}
+    {% for event in events %}
+      {% include 'featured-event.njk' %}
+    {% endfor %}
+  {% else %}
+    <p>Stay tuned for details!</p>
   {% endif %}
 </section>
 

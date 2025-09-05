@@ -1,18 +1,14 @@
-{% set calTitle = event.title | encodeForUrl %}
-{% set calDescription = event.overview | calendarDescription %}
-{% set calStartTime = event.startAt.utc| encodeForUrl %}
-{% set calJoinLink = event.liveUrl | encodeForUrl %}
+{% set calTitle = data.title | encodeForUrl %}
+{% set calDescription = data.overview | calendarDescription %}
+{% set calStartTime = data.startAt.utc| encodeForUrl %}
+{% set calJoinLink = data.liveUrl | encodeForUrl %}
 
 <p>Add to Calendar:</p>
 <div class="calendar-links">
   {% for service in calendars %}
-    <a href="https://addcal.co/api/calndr/d/event?service={{ service.service }}&start={{ event.startAt.utc }}&title=11ty Meetup {{ calTitle }}&description={{ calDescription }}&location={{ calJoinLink }}" rel="nofollow" class="button" target="_blank">
+    <a href="https://addcal.co/api/calndr/d/event?service={{ service.service }}&start={{ calStartTime }}&title=11ty Meetup {{ calTitle }}&description={{ calDescription }}&location={{ calJoinLink }}" rel="nofollow" class="button" target="_blank">
       <img src="/img/calendar-add.svg" alt="calendar" height="16" width="16">
       {{ service.name }}
     </a>
   {% endfor %}
 </div>
-
-<script type="application/json">
-    {{ event|dump|safe }}
-</script>

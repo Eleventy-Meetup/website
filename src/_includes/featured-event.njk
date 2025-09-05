@@ -1,14 +1,15 @@
-{% set dateTime = event.startAt.utc %}
+{% set data = event.data.event %}
+{% set dateTime = data.startAt.utc %}
 
 <div class="featured-event">
-  <time datetime="{{dateTime}}">{{dateTime | readableDateTime}}</time>
-  <h3>{{event.title}}</h3>
-  <div class="lead">{{event.overview | safe}}</div>
+  <time datetime="{{dateTime}}">{{ dateTime | readableDateTime }}</time>
+  <h3>{{data.title}}</h3>
+  <div class="lead">{{data.overview | safe}}</div>
 
   {% include "add-to-calendar.njk" %}
 
-  {% if event.talks %}
-    {% for talk in event.talks %}
+  {% if data.talks %}
+    {% for talk in data.talks %}
       {% include 'talk.njk' %}
     {% endfor %}
   {% endif %}

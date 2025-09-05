@@ -335,12 +335,13 @@ article.event h2 {
   margin: var(--size-200) 0;
 }
 
+.featured-event {margin-bottom: 5rem;}
 .featured-event h3,
 .featured-event .lead {
   margin: 0;
 }
 .talk-card {
-  margin: 5rem 0 0;
+  margin: 4rem 0 0;
   position: relative;
 }
 .talk-card .headshot {
