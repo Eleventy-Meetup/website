@@ -6,7 +6,7 @@
 <p>Add to Calendar:</p>
 <div class="calendar-links">
   {% for service in calendars %}
-    <a href="https://addcal.co/api/calndr/d/event?service={{ service.service }}&start={{ calStartTime }}&title=11ty Meetup {{ calTitle }}&description={{ calDescription }}&location={{ calJoinLink }}" rel="nofollow" class="button" target="_blank">
+    <a href="https://addcal.co/api/calndr/d/event?service={{ service.service }}&start={{ calStartTime }}&title=11ty Meetup {{ calTitle }}&description={{ calDescription }}&location={{ calJoinLink }}&uid={{ calStartTime }}" rel="nofollow" class="button" target="_blank">
       <img src="/img/calendar-add.svg" alt="calendar" height="16" width="16">
       {{ service.name }}
     </a>
