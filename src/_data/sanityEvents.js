@@ -1,9 +1,9 @@
-const groq = require('groq')
-const blocksToHtml = require('@sanity/block-content-to-html')
-const client = require('../utils/sanityClient.js')
-const serializers = require('../utils/serializers')
-const overlayDrafts = require('../utils/overlayDrafts')
-const urlFor = require('../utils/imageUrl.js')
+import groq from 'groq'
+import blocksToHtml from '@sanity/block-content-to-html'
+import client from '../utils/sanityClient.js'
+import serializers from '../utils/serializers.js'
+import overlayDrafts from '../utils/overlayDrafts.js'
+import urlFor from '../utils/imageUrl.js'
 
 // TODO: delete?
 const hasToken = !!client.config().token
@@ -33,7 +33,7 @@ function generateEvent (event) {
   }
 }
 
-async function getEvents () {
+export default async function getEvents () {
   const filter = groq`
     *[_type == "event" && published]{
       title,
@@ -62,5 +62,3 @@ async function getEvents () {
   const reducedEvents = overlayDrafts(hasToken, events)
   return reducedEvents
 }
-
-module.exports = getEvents

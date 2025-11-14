@@ -1,11 +1,11 @@
-const imageUrl = require('./imageUrl')
-const blocksToHtml = require('@sanity/block-content-to-html')
+import imageUrl from './imageUrl.js'
+import blocksToHtml from '@sanity/block-content-to-html'
 // `h` is a way to build HTML known as hyperscript
 // See https://github.com/hyperhype/hyperscript for more info
 const h = blocksToHtml.h
 
 // Learn more on https://www.sanity.io/guides/introduction-to-portable-text
-module.exports = {
+export default {
   types: {
     authorReference: ({node}) => `[${node.name}](/authors/${node.slug.current})`,
     code: props => (

@@ -1,9 +1,9 @@
-const groq = require('groq')
-const blocksToHtml = require('@sanity/block-content-to-html')
-const client = require('../utils/sanityClient.js')
-const serializers = require('../utils/serializers')
-const overlayDrafts = require('../utils/overlayDrafts')
-const urlFor = require('../utils/imageUrl.js')
+import groq from 'groq'
+import blocksToHtml from '@sanity/block-content-to-html'
+import client from '../utils/sanityClient.js'
+import serializers from '../utils/serializers.js'
+import overlayDrafts from '../utils/overlayDrafts.js'
+import urlFor from '../utils/imageUrl.js'
 
 // TODO: delete?
 const hasToken = !!client.config().token
@@ -16,12 +16,10 @@ function generateOrganizer (person) {
   }
 }
 
-async function getOrganizers () {
+export default async function getOrganizers () {
   const filter = groq`*[_type == "person" && organizer] | order(name asc)`
   const docs = await client.fetch(filter).catch(err => console.error(err))
   const organizers = docs.map(generateOrganizer)
   const reducedOrganizers = overlayDrafts(hasToken, organizers)
   return reducedOrganizers
 }
-
-module.exports = getOrganizers
