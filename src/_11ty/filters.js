@@ -43,7 +43,7 @@ export function pastEvents(events) {
 }
 
 export function excerpt(post, limit = "300") {
-  const content = post.replace(/(<([^>]+)>)/gi, "")
-  content.length > limit ? content.substr(0, content.lastIndexOf(" ", limit)) + "..." : content
-  return content
+  const content = post.replace(/(<([^>]+)>)/gi, "");
+  content.length > limit ? content.substr(0, content.lastIndexOf(" ", limit)) + "..." : content;
+  return content;
 }
