@@ -1,9 +1,7 @@
-const imageUrl = require('@sanity/image-url')
-const sanityClient = require('./sanityClient')
+import imageUrl from '@sanity/image-url'
+import sanityClient from './sanityClient.js'
 
 // Learn more: https://www.sanity.io/docs/asset-pipeline/image-urls
-function urlFor(source) {
+export default function urlFor(source) {
   return imageUrl(sanityClient).image(source)
 }
-
-module.exports = urlFor
