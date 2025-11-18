@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
@@ -12,12 +13,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^3.1.2",
     "@sanity/block-content-to-html": "^2.0.0",
     "@sanity/client": "^2.11.0",
     "groq": "^2.2.6",
-    "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1",
     "nunjucks-date": "^1.5.0"
+  },
+  "overrides": {
+    "js-yaml": "4.1.1"
   }
 }

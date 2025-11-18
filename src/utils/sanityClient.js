@@ -1,6 +1,6 @@
-const sanityClient = require("@sanity/client");
+import sanityClient from "@sanity/client";
 
-module.exports = sanityClient({
+export default sanityClient({
   apiVersion: '2021-03-25',
   projectId: 'u9jnua2q',
   dataset: 'production',

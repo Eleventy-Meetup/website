@@ -1,6 +1,6 @@
-const filters = require('./src/_11ty/filters');
+import * as filters from './src/_11ty/filters.js';
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/style.css");
   eleventyConfig.addPassthroughCopy("src/img/");
   eleventyConfig.addPassthroughCopy("src/javascript/");
